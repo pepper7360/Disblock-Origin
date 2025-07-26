@@ -183,7 +183,7 @@ div[class*="notice"][class*="colorPremium"] { display: none; }
 /* ------------- */
 
 /* Boost progress bar */
-#channels div[class*="containerWithMargin__"]:has(div[class*="boostCountText__"]) { display: none; }
+#channels > ul > div[class*="containerWithMargin__"]:has(div[class*="boostCountText__"]) { display: none; }
 
 /* Server Boost button in top left dropdown */
 div[id="guild-header-popout-premium-subscribe"] { display: none; }
