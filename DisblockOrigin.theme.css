@@ -178,6 +178,9 @@ div[class*="notice"][class*="colorPremium"] { display: none; }
 /* "Amp up your profile" in profile popup */
 .user-profile-popout div[class*=upsellContainer] { display: none; }
 
+/* Hide profile shop button */
+div[class*="profileButtons"] > div:has(button:not([aria-expanded])) { display: none; }
+
 /* ------------- */
 /* Server boosts */
 /* ------------- */
