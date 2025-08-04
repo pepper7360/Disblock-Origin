@@ -275,8 +275,8 @@ form div[class^=channelBottomBarArea_] {
   div[class^="buttons_"]
   {
     /* Send gift button (both versions) */
-    > div:has(div[class*="trinketsIcon_"]), > button { display: none; }
-  
+    > div:not([class*="buttonContainer_"])[class*="button__"], > button { display: none; }
+
     /* GIF picker button */
     div[class^="expression-picker-chat-input-button"]:has( + div[class^="expression-picker-chat-input-button"] div[class*="stickerButton_"]) { display: var(--display-gif-button, flex); }
     
