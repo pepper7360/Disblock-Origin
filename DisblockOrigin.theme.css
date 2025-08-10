@@ -189,7 +189,7 @@ div[class*="profileButtons"] > div:has(button:not([aria-expanded])) { display: n
 /* ------------- */
 
 /* Boost progress bar */
-#channels > ul > div[class*="containerWithMargin__"]:has(div[class*="boostCountText__"]) { display: none; }
+#channels > ul > div[class*="container__"]:has([class*="boostCountText__"]) { display: none; }
 
 /* Server Boost button in top left dropdown */
 div[id="guild-header-popout-premium-subscribe"] { display: none; }
