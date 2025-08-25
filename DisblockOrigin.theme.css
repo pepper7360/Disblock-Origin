@@ -357,13 +357,13 @@ span[class^="guildTagContainer__"]:has(img[class^="badge__"]) {
 }
 
 /* Only for some servers, roles get animated gradients + glow */
-@container style(--bool-show-name-gradients: false) or style(--bool-show-name-gradients: false) {
-    span[class*=usernameGradient ] {
+@container style(--bool-show-name-gradients: false) or style(--bool-show-name-gradients: 0) {
+    span[class*="usernameGradient_"] {
       color: var(--custom-gradient-color-1);
       background: none;
       -webkit-text-fill-color: initial;
 
-      ~ [class*=nameGlow] {
+      ~ [class*="nameGlow__"] {
         display: none;
       }
     }
