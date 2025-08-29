@@ -44,10 +44,17 @@
 
 li[role="listitem"] {
   /* Hide Nitro button in Home */
-  :has(a[href="/store"]) { display: none; }
+  &:has(a[href="/store"]) { display: none; }
 
   /* Hide shop button in Home */
-  :has(a[href="/shop"]) { display: none; }
+  &:has(a[href="/shop"]) { 
+    display: none;
+
+    /* Also hide the extra space left by these buttons */
+    ~ div[class^="sectionDivider"] {
+        margin-top: var(--space-4);
+    } 
+  }
 }
 /* [Settings][Sidebar] Hide Nitro tabs */
 div[role="tablist"] {
