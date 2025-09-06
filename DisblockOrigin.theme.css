@@ -46,6 +46,9 @@ li[role="listitem"] {
   /* Hide Nitro button in Home */
   &:has(a[href="/store"]) { display: none; }
 
+  /* Hide quests button in Home */
+  &:has(a[href="/quest-home"]) { display: none; }
+
   /* Hide shop button in Home */
   &:has(a[href="/shop"]) { 
     display: none;
