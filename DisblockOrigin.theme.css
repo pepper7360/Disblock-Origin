@@ -121,13 +121,12 @@ div[class^="premiumFeatureBorder"] { display: none; }
 div[id="voice-&-video-tab"] div[class*="callSoundsDivider_"] ~ * { display: none; }
 
 #appearance-tab {
-  /* [Settings][Appearance] App icon and Theme upsell (old version) */
-  div[class^="selectionGroup"]:has(div[class*="appIconSelectionContainer"]):has(div[class*="premiumSubscribeButton_"]) { display: none; }
-  div[role="button"]:has(svg[class*="nitroWheel"]) { display: none;}
+  /* [Settings][Appearance] App icon and Theme upsell */
+  section[class*="basicThemeSelectors"] {
+    &+ div, &+div + div { display: none; }
+  }
 
-  /* [Settings][Appearance] App icon and Theme upsell (new version) */
-  div[class*="SelectionContainer"]:has(div[class*="lockedBadgeContainer"]) { display: none;}
-  div[class*="description"]:has(svg[class*="nitroWheel"]) { display: none;}
+  div[class*="selectionGroup"]:has(img[alt="App Icon"]) { display: none; }
 }
 
 /* Hide message size upsells */
