@@ -342,8 +342,14 @@ div[class^="listItem_"]:has([data-list-item-id=guildsnav___app-download-button])
 /* Hide Library button in Home */
 a[data-list-item-id*="___library"] { display: none; }
 
-/* Nitro and server booster profile badge */
-div[class^=tags] div[role="group"] > div:has(a[href*="/settings/premium"]) { display: var(--display-badges); }
+/* Profile badges */
+div[class^=tags] div[role="group"] {
+  /* Nitro and Server Boosting */
+  > div:has(a[href*="/settings/premium"]) { display: var(--display-badges); }
+
+  /* Orbs Apprentice */
+  > div:has(img[class*="badge_"][src*="83d8a1eb09a8d64e59233eec5d4d5c2d"]) { display: none; }
+}
 
 /* Server booster member list badge */
 div[class^="nameAndDecorators_"] > div:has(svg[class^="premiumIcon_"]) { display: var(--display-badges); }
