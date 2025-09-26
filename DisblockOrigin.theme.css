@@ -279,6 +279,15 @@ div[class^=tags] div[role="group"] > div > a[href="https://discord.com/discovery
 /* Promoted quest inside "Active Now" friends' profiles */
 div[class^=wrapper]:has(div[class^=instructions]) { display: none; }
 
+/* Hide members list quest icon */
+div[class*="member__"] svg[class*="questsIcon_"] { display: none; }
+
+/* Hide members list quest */
+div[class*="member__"][class*="selected__"] div[class*="childContainer__"] { background-color: unset !important; }
+
+/* Hide members list quest popout */
+div[id*="popout_"]:has(div[class*="imgWrapper__"]) { display: none; }
+
 /* ------------------ */
 /* General annoyances */
 /* ------------------ */
