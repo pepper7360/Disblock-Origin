@@ -286,7 +286,9 @@ div[class*="member__"] svg[class*="questsIcon_"] { display: none; }
 div[class*="member__"][class*="selected__"] div[class*="childContainer__"] { background-color: unset !important; }
 
 /* Hide members list quest popout */
-div[id*="popout_"]:has(div[class*="imgWrapper__"]) { display: none; }
+div[id*="popout_"]:has(div[class*="imgWrapper__"] img[src^="https://cdn.discordapp.com/quests"]) {
+  display: none;
+}
 
 /* ------------------ */
 /* General annoyances */
