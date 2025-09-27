@@ -187,8 +187,10 @@ div[class*="overlayBackground_"]:has(div[class*="contentText_"] > a[role="button
 /* Hide "sneak peek" upsell banner */
 div[class*="notice"][class*="colorPremium"] { display: none; }
 
-/* "Amp up your profile" in profile popup */
-.user-profile-popout aside[class*=upsellContainer] { display: none; }
+/* "Amp up your profile" in profile popups */
+.user-profile-popout, .user-profile-modal-v2 {
+  aside[class*=upsellContainer] { display: none; }
+}
 
 /* Hide profile shop button */
 div[class*="profileButtons"] > div:has(button:not([aria-expanded])) { display: none; }
