@@ -300,13 +300,13 @@ form div[class^=channelBottomBarArea_] {
   div[class^="buttons_"]
   {
     /* Send gift button (both versions) */
-    > div:not([class*="buttonContainer_"])[class*="button__"], > button { display: none; }
+    &> div:not(.expression-picker-chat-input-button) { display: none; }
 
     /* GIF picker button */
-    div[class^="expression-picker-chat-input-button"]:has( + div[class^="expression-picker-chat-input-button"] div[class*="stickerButton_"]) { display: var(--display-gif-button, flex); }
+    div.expression-picker-chat-input-button:has( + div.expression-picker-chat-input-button div[class*="stickerButton_"]) { display: var(--display-gif-button, flex); }
     
     /* Sticker picker button */
-    div[class^="expression-picker-chat-input-button"]:has(div[class*="stickerButton_"]) { display: var(--display-sticker-button, flex); }
+    div.expression-picker-chat-input-button:has(div[class*="stickerButton_"]) { display: var(--display-sticker-button, flex); }
   }
 
   /* Apps button (right) */
