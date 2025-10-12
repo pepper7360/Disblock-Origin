@@ -300,7 +300,13 @@ form div[class^=channelBottomBarArea_] {
   div[class^="buttons_"]
   {
     /* Send gift button (both versions) */
-    &> div:not(.expression-picker-chat-input-button) { display: none; }
+    &> div:not(.expression-picker-chat-input-button) {
+      /* Web client */
+      &:has(div[class*="lottieIcon__"]) { display: none; }
+      
+      /* Desktop client */
+      &:has(>span) { display: none; }
+    }
 
     /* GIF picker button */
     div.expression-picker-chat-input-button:has( + div.expression-picker-chat-input-button div[class*="stickerButton_"]) { display: var(--display-gif-button, flex); }
@@ -314,12 +320,12 @@ form div[class^=channelBottomBarArea_] {
 }
 
 /* Hide emoji suggestions on message hover */
-div[class*="popoverReactionHoverBar"] > div[role="button"]:has(div[data-type="emoji"]) {
+div[class*="popover_"] {
   /* Emoji reaction buttons */
-  display: var(--display-hover-reaction-emoji, flex);
+  div[role="button"]:has(div[data-type="emoji"]) { display: var(--display-hover-reaction-emoji, flex); }
 
   /* Separator */
-  ~ div[class^="separator"] { display: var(--display-hover-reaction-emoji); }
+  &> div[class^="separator"] { display: var(--display-hover-reaction-emoji); }
 }
 
 /* Edit image with Apps on image hover */
