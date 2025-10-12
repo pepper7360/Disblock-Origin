@@ -6,7 +6,7 @@ A configurable ad-blocking "theme" for Discord that hides all Nitro and "boost" 
 alongside some annoyances.
 
 > [!NOTE]  
-> I kindly request that, while welcome, forks are kept in free forges such as Codeberg. Though it is not within my control, I do not wish for my projects to be hosted on GitHub. For more info, see: [Give Up Github!](https://giveupgithub.org)
+> I kindly request that, while welcome, forks are kept in free forges such as Codeberg. Though it is not within my control, I do not wish for my projects to be hosted on GitHub. For more info, see: [Give Up GitHub!](https://giveupgithub.org)
 
 ## Installation
 
@@ -43,9 +43,9 @@ Disblock Origin logo to let you know it's working.
 
 ## Customization
 
-Certain features of Disblock Origin are cutomizable by overriding settings
+Certain features of Disblock Origin are customizable by overriding settings
 listed at the top of the theme file:
-https://codeberg.org/AllPurposeMat/Disblock-Origin/src/commit/2d5de9a365e0eceb4981c4cd3b06ad8d9e17dd8c/DisblockOrigin.theme.css#L9-L38
+https://codeberg.org/AllPurposeMat/Disblock-Origin/src/branch/master/DisblockOrigin.theme.css#L9-L40
 
 The UserCSS provides a UI for these, but it is unfortunately not possible to use
 it via a client mod. Instead, to change a setting, copy and paste the `:root`
