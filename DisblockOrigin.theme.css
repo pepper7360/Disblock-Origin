@@ -196,6 +196,12 @@ div[class*="notice"][class*="colorPremium"] { display: none; }
 /* Hide profile shop button */
 div[class*="profileButtons"] > div:has(button:not([aria-expanded])) { display: none; }
 
+/* Hide upsells in soundboard picker */
+div[data-popout-animating] div[class^=picker] {
+  [class*=sectionContainerNitroLocked], [class*=soundRowNitroLocked] { background-color: inherit; }
+  div[class^=upsellContainer] { display: none; } /* NOTE: this leaves an ugly space at the bottom, could fix but meh */
+}
+
 /* ------------- */
 /* Server boosts */
 /* ------------- */
