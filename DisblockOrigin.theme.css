@@ -194,7 +194,7 @@ div[class*="notice"][class*="colorPremium"] { display: none; }
 }
 
 /* Hide profile shop button */
-div[class*="profileButtons"] > div:has(button:not([aria-expanded])) { display: none; }
+div[class*="profileButtons"] > span:has(button:not([aria-expanded])) { display: none; }
 
 /* Hide upsells in soundboard picker */
 div[data-popout-animating] div[class^=picker] {
