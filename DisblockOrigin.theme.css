@@ -100,8 +100,8 @@ div[class*="effectGridItem"]:has(div[class*="iconBadge"]) { display: none; } /* 
 div[class^="premiumFeatureBorder"] { display: none; }
 
 #profile-customization-tab {
-  /* Profiles: New style ad */
-  > div[class^="container"]:has(button[class*="colorBrand"]) { display: none; }
+  /* Hide the 'Give your profile a fresh look' ad */
+  div[class^="container"]:has(div[class^="artContainer_"]) { display: none; }
 
   /* Orbs ad */
   > div[class^="container"]:has(div[class*="artContainer_"]) { display: none; }
