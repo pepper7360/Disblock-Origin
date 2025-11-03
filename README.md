@@ -45,7 +45,7 @@ Disblock Origin logo to let you know it's working.
 
 Certain features of Disblock Origin are customizable by overriding settings
 listed at the top of the theme file:
-https://codeberg.org/AllPurposeMat/Disblock-Origin/src/branch/master/DisblockOrigin.theme.css#L9-L40
+https://codeberg.org/AllPurposeMat/Disblock-Origin/src/branch/master/DisblockOrigin.theme.css#L9-L42
 
 The UserCSS provides a UI for these, but it is unfortunately not possible to use
 it via a client mod. Instead, to change a setting, copy and paste the `:root`

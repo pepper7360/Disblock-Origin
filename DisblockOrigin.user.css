@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Disblock Origin
 @namespace      https://allpurposem.at
-@version        1.3.0
+@version        1.4.0
 @description    Hide all Nitro & Boost upsells on Discord!
 @homepageURL    https://codeberg.org/AllPurposeMat/Disblock-Origin
 @supportURL     https://codeberg.org/AllPurposeMat/Disblock-Origin/issues
@@ -64,12 +64,19 @@
     "Hide": "none"
 }
 
+@var checkbox   bool-show-name-gradients "Render gradients & glow in usernames, boosted servers only" 1
+
 @var select     display-server-members-activity "Hide servers members activity list" {
     "Show*": "unset",
     "Hide": "none"
 }
 
-@var checkbox   bool-show-name-gradients "Render gradients & glow in usernames, boosted servers only" 1
+@var checkbox   bool-show-server-banners "Show server banners" 1
+
+@var checkbox   bool-show-profile-banner "Show profile banners" 1
+
+@var checkbox   bool-show-profile-modal-background-banner "Show profile modal background banners" 1
+
 
 @var select     display-settings-billing-header "Display settings billing header" {
     "Show*": "unset",
@@ -100,8 +107,6 @@
     "Show": "unset",
     "Hide*": "none"
 }
-
-@var checkbox   bool-show-server-banners "Show server banners" 1
 ==/UserStyle== */
 
 @-moz-document domain("discord.com") {
