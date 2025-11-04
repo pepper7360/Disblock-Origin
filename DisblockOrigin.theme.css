@@ -47,20 +47,12 @@
 /* ------------------ */
 
 li[role="listitem"] {
-  /* Hide Nitro button in Home */
-  &:has(a[href="/store"]) { display: none; }
+  /* Hide the "Nitro", "Shop", and "Quests" buttons in Home */
+  &:has(a[href="/store"], a[href="/shop"], a[href="/quest-home"]) { display: none; }
 
-  /* Hide quests button in Home */
-  &:has(a[href="/quest-home"]) { display: none; }
-
-  /* Hide shop button in Home */
-  &:has(a[href="/shop"]) {
-    display: none;
-
-    /* Also hide the extra space left by these buttons */
-    ~ div[class^="sectionDivider"] {
-        margin-top: var(--space-4);
-    }
+  /* Align the gap on the top and bottom of the remaining friends button */
+  ~ div[class^="sectionDivider"] {
+      margin-top: var(--space-8);
   }
 }
 /* [Settings][Sidebar] Hide Nitro tabs */
