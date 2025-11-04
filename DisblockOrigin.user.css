@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Disblock Origin
 @namespace      https://allpurposem.at
-@version        1.4.0
+@version        1.5.0
 @description    Hide all Nitro & Boost upsells on Discord!
 @homepageURL    https://codeberg.org/AllPurposeMat/Disblock-Origin
 @supportURL     https://codeberg.org/AllPurposeMat/Disblock-Origin/issues
@@ -20,6 +20,11 @@
 @var select     display-sticker-button "Display Sticker button in chat bar" {
     "Show": "unset",
     "Hide*": "none"
+}
+
+@var select     display-emoji-button "Display Emoji button in chat bar" {
+    "Show*": "unset",
+    "Hide": "none"
 }
 
 @var select     display-hover-reaction-emoji "Display emoji suggestions on message hover" {
