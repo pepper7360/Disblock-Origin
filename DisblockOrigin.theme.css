@@ -160,7 +160,10 @@ div[class^="nitroTopDividerContainer"], div[class^="nitroTopDividerContainer"] ~
 div[class^=emojiPickerListWrapper] div[class^=upsellContainer] { display: none; }
 
 /* Remove the purple background in the emoji picker and autocomplete */
-div[class*=categorySectionNitroLocked] { background-color: unset !important; }
+div[class*=categorySectionNitroLocked] {
+  background: unset !important;
+  background-color: unset !important;
+}
 
 /* Remove the purple divider at the bottom of the emoji picker*/
 div[class^=nitroBottomDivider] { display: none; }
