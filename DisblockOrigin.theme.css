@@ -298,31 +298,29 @@ div[id*="popout_"]:has(div[class*="imgWrapper__"] img[src^="https://cdn.discorda
 /* ------------------ */
 
 /* Chatbox buttons */
-form div[class^=channelBottomBarArea_] {
-  div[class^="buttons_"] {
-    /* Send gift button (both versions) */
-    &> div:not(.expression-picker-chat-input-button) {
-      /* Web client */
-      &:has(div[class*="lottieIcon__"]) { display: none; }
+form div[class^=channelBottomBarArea_] div[class^="buttons_"] {
+  /* Send gift button (both versions) */
+  &> div:not(.expression-picker-chat-input-button):not(.app-launcher-entrypoint) {
+    /* Web client */
+    &:has(div[class*="lottieIcon__"]) { display: none; }
 
-      /* Desktop client */
-      &:has(>span) { display: none; }
-    }
-
-    div.expression-picker-chat-input-button {
-        /* GIF picker button */
-        &:has( + div.expression-picker-chat-input-button div[class*="stickerButton_"]) { display: var(--display-gif-button, flex); }
-
-        /* Sticker picker button */
-        &:has(div[class*="stickerButton_"]) { display: var(--display-sticker-button, flex); }
-
-        /* Emoji picker button */
-        &:has(div[class*="emojiButton_"]) { display: var(--display-emoji-button, flex); }
-    }
+    /* Desktop client */
+    &:has(>span) { display: none; }
   }
 
-  /* Apps button (right) */
-  div[class^="channelAppLauncher_"] { display: var(--display-app-launcher); }
+  div.expression-picker-chat-input-button {
+    /* GIF picker button */
+    &:has( + span[class^="hiddenVisually_"] + div.expression-picker-chat-input-button div[class*="stickerButton_"]) { display: var(--display-gif-button, flex); }
+
+    /* Sticker picker button */
+    &:has(div[class*="stickerButton_"]) { display: var(--display-sticker-button, flex); }
+
+    /* Emoji picker button */
+    &:has(div[class*="emojiButton_"]) { display: var(--display-emoji-button, flex); }
+  }
+
+  /* Apps button */
+  div.app-launcher-entrypoint { display: var(--display-app-launcher); }
 }
 
 /* Hide emoji suggestions on message hover */
