@@ -34,7 +34,7 @@
   --bool-show-profile-banner: true;                  /* Show profile banner */
   --bool-show-profile-modal-background-banner: true; /* Show profile modal background banner */
 
-  --display-settings-billing-header: unset;          /* Settings menu Billing Settings header */
+  --bool-settings-payment-section: true;             /* Settings menu toggle ENTIRE PAYMENT SECTION */
   --display-settings-nitro-tab: none;                /* Settings menu Nitro tab */
   --display-settings-server-boost-tab: none;         /* Settings menu Server Boost tab */
   --display-settings-subscriptions-tab: none;        /* Settings menu Subscriptions tab */
@@ -56,67 +56,56 @@ li[role="listitem"] {
   }
 }
 
-div[role="list"] nav {
-  ul[class^="section__"] {
-    &:has(+ ul div[data-settings-sidebar-item="nitro_panel"]) { border-bottom: var(--display-settings-billing-header, 1px solid var(--border-subtle)); }
-    &:has(div[data-settings-sidebar-item="nitro_panel"]) { padding-bottom: var(--display-settings-billing-header, var(--space-8)); }
-  }
-  div[class^="sectionLabel__"]:has(+ div[data-settings-sidebar-item="nitro_panel"]) { display: var(--display-settings-billing-header); }  /* Billing Settings header */
-  div[data-settings-sidebar-item="nitro_panel"] { display: var(--display-settings-nitro-tab); } /* Nitro */
-  div[data-settings-sidebar-item="premium_guild_subscriptions_panel"] { display: var(--display-settings-server-boost-tab); } /* Server Boost */
-  div[data-settings-sidebar-item="subscriptions_panel"] { display: var(--display-settings-subscriptions-tab); } /* Subscriptions */
-  div[data-settings-sidebar-item="gift_panel"] { display: var(--display-settings-gift-inventory-tab); } /* Gift Inventory */
-  div[data-settings-sidebar-item="billing_panel"] { display: var(--display-nitro-features); } /* Billing */
-}
-
 /* [Settings][Sidebar] Hide Nitro tabs */
-div[role="tablist"] {
-  > div[class*="separator_"]:has(+ div[class*="header_"] + div[class*="premiumTab_"]) { display: var(--display-settings-billing-header); }  /* Separator */
-  > div[class*="header_"]:has(+ div[class*="premiumTab_"]) { display: var(--display-settings-billing-header); }  /* Billing Settings header */
-  > div[class*="premiumTab_"] { display: var(--display-settings-nitro-tab); } /* Nitro */
-  > div[class*="premiumTab_"] + div { display: var(--display-settings-server-boost-tab); } /* Server Boost */
-  > div[class*="premiumTab_"] + div + div { display: var(--display-settings-subscriptions-tab); } /* Subscriptions */
-  > div[class*="premiumTab_"] + div + div + div { display: var(--display-settings-gift-inventory-tab); } /* Gift Inventory */
-  > div[class*="premiumTab_"] + div + div + div + div { display: var(--display-nitro-features); } /* Billing */
+div[role="list"] nav {
+  @container style(--bool-settings-payment-section: false) {
+    ul[class*="section"]:has(div[data-settings-sidebar-item="nitro_panel"]) { display: none; }
+  }
+  @container style(--bool-settings-payment-section: true) {
+    div[class^="sectionLabel__"]:has(+ div[data-settings-sidebar-item="nitro_panel"]) { display: var(--display-settings-billing-header); }  /* Billing Settings header */
+    div[data-settings-sidebar-item="nitro_panel"] { display: var(--display-settings-nitro-tab); } /* Nitro */
+    div[data-settings-sidebar-item="premium_guild_subscriptions_panel"] { display: var(--display-settings-server-boost-tab); } /* Server Boost */
+    div[data-settings-sidebar-item="subscriptions_panel"] { display: var(--display-settings-subscriptions-tab); } /* Subscriptions */
+    div[data-settings-sidebar-item="gift_panel"] { display: var(--display-settings-gift-inventory-tab); } /* Gift Inventory */
+    div[data-settings-sidebar-item="billing_panel"] { display: var(--display-nitro-features); } /* Billing */
+  }
 }
-
-/* [Settings][Sidebar] Disable Nitro tab shininess (for search) */
-div[class^="premiumTab"] {
-  div[class^="premiumLabel"] svg { display: none; }
-  div[class^="background"] { display: none; }
-}
-
-/* Server Profiles: Make unique profiles for each server box */
-div[class*="upsellOverlayContainer_"] { display: none; }
 
 
 /* These settings are not applied if the billing tab is shown (inferred the user has Nitro) */
 @container style(--display-nitro-features: none) {
   /* Profiles: Choose a GIF avatar */
-  ul[class^=optionsList] { grid-template-columns: 1fr; }
-  ul[class^=optionsList] li:nth-child(2) { display: none; }
+  main {
+    div[class*=imageSelectionSection] {
+      ul[class*=optionsList] {
+        grid-template-columns: 1fr;
+        li:nth-child(2) { display: none; }
+      }
+    }
+
+    div[class*=premiumUpsell] { display: none; }
+  }
 
   /* Add Super Reaction menu item */
-div[class^=burstToggle] { display: none; }
-  div[class^="burstToggle"] { display: none; }
+  div:has(>#burst-reaction-toggle-button) { display: none; }
 }
 
 /* Profiles: Change decorations exclusive to Nitro */
 div[class*="decorationGridItem"]:has(div[class*="iconBadge"]) { display: none; } /* Decorations */
 div[class*="effectGridItem"]:has(div[class*="iconBadge"]) { display: none; } /* Effects */
 
-/* Profiles: Try out Nitro! box */
-div[class^="premiumFeatureBorder"] { display: none; }
+/* Profiles: Nitro Preview box */
+div[class*="premiumFeatureBorder"] { display: none; }
 
-div[class^="settingsPage"] {
+div[class*="settingsPage"] {
+  /* Per-server Profiles: Make unique profiles for each server box */
+  div[class*="upsellOverlayContainer"] { display: none; }
+
   /* Hide the 'Give your profile a fresh look' ad */
-  div[class^="container"]:has(div[class^="artContainer_"]) { display: none; }
-
-  /* Orbs ad */
-  > div[class^="container"]:has(div[class*="artContainer_"]) { display: none; }
+  div[class*="container"]:has(div[class*="artContainer"]) { display: none; }
 
   /* [Settings][Profiles]: Per server avatar */
-  div[class^="avatar_"]:has(path[d="M7 4a1 1 0 0 0 0 2h3a1 1 0 1 1 0 2H5.5a1 1 0 0 0 0 2H8a1 1 0 1 1 0 2H6a1 1 0 1 0 0 2h1.25A8 8 0 1 0 15 4H7Zm8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"]) {
+  div[role=button][class*="avatar"]:has(path[d="M16.23 12c0 1.29-.95 2.25-2.22 2.25A2.18"]) {
       pointer-events: none;
   }
 
@@ -124,7 +113,7 @@ div[class^="settingsPage"] {
   foreignObject div[role="button"]:has(path[d^="M16.23 12c0 1.29-.95 2.25-2.22"]) { display: none;}
 
   /* [Settings][Profiles]: Hide the 'Level up your look, only with Nitro' upsell banner */
-  div[class^="upsellContainer"] { display: none; }
+  div[class*="upsellContainer"] { display: none; }
 }
 
 /* [Settings][Voice & Video] Soundboard entrance sounds */
@@ -312,7 +301,7 @@ div[id*="popout_"]:has(div[class*="imgWrapper__"] img[src^="https://cdn.discorda
 /* ------------------ */
 
 /* Chatbox buttons */
-form div[class^=channelBottomBarArea_] div[class^="buttons_"] {
+form div[class*=channelBottomBarArea] div[class*=buttons] {
   /* Send gift button (both versions) */
   &> div:not(.expression-picker-chat-input-button):not(.app-launcher-entrypoint) {
     /* Web client */
@@ -327,10 +316,10 @@ form div[class^=channelBottomBarArea_] div[class^="buttons_"] {
     &:has( + span[class^="hiddenVisually_"] + div.expression-picker-chat-input-button div[class*="stickerButton_"]) { display: var(--display-gif-button, flex); }
 
     /* Sticker picker button */
-    &:has(div[class*="stickerButton_"]) { display: var(--display-sticker-button, flex); }
+    &:has(div[class*="stickerButton"]) { display: var(--display-sticker-button, flex); }
 
     /* Emoji picker button */
-    &:has(div[class*="emojiButton_"]) { display: var(--display-emoji-button, flex); }
+    &:has(div[class*="emojiButton"]) { display: var(--display-emoji-button, flex); }
   }
 
   /* Apps button */
@@ -338,7 +327,7 @@ form div[class^=channelBottomBarArea_] div[class^="buttons_"] {
 }
 
 /* Hide emoji suggestions on message hover */
-div[class*="popover_"] {
+div[class*="popover"] {
   /* Emoji reaction buttons */
   div[role="button"]:has(div[data-type="emoji"]) { display: var(--display-hover-reaction-emoji, flex); }
 
