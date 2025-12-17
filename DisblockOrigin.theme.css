@@ -55,6 +55,20 @@ li[role="listitem"] {
       margin-top: var(--space-8);
   }
 }
+
+div[role="list"] nav {
+  ul[class^="section__"] {
+    &:has(+ ul div[data-settings-sidebar-item="nitro_panel"]) { border-bottom: var(--display-settings-billing-header, 1px solid var(--border-subtle)); }
+    &:has(div[data-settings-sidebar-item="nitro_panel"]) { padding-bottom: var(--display-settings-billing-header, var(--space-8)); }
+  }
+  div[class^="sectionLabel__"]:has(+ div[data-settings-sidebar-item="nitro_panel"]) { display: var(--display-settings-billing-header); }  /* Billing Settings header */
+  div[data-settings-sidebar-item="nitro_panel"] { display: var(--display-settings-nitro-tab); } /* Nitro */
+  div[data-settings-sidebar-item="premium_guild_subscriptions_panel"] { display: var(--display-settings-server-boost-tab); } /* Server Boost */
+  div[data-settings-sidebar-item="subscriptions_panel"] { display: var(--display-settings-subscriptions-tab); } /* Subscriptions */
+  div[data-settings-sidebar-item="gift_panel"] { display: var(--display-settings-gift-inventory-tab); } /* Gift Inventory */
+  div[data-settings-sidebar-item="billing_panel"] { display: var(--display-nitro-features); } /* Billing */
+}
+
 /* [Settings][Sidebar] Hide Nitro tabs */
 div[role="tablist"] {
   > div[class*="separator_"]:has(+ div[class*="header_"] + div[class*="premiumTab_"]) { display: var(--display-settings-billing-header); }  /* Separator */
@@ -94,7 +108,7 @@ div[class*="effectGridItem"]:has(div[class*="iconBadge"]) { display: none; } /* 
 /* Profiles: Try out Nitro! box */
 div[class^="premiumFeatureBorder"] { display: none; }
 
-#profile-customization-tab {
+div[class^="settingsPage"] {
   /* Hide the 'Give your profile a fresh look' ad */
   div[class^="container"]:has(div[class^="artContainer_"]) { display: none; }
 
@@ -107,7 +121,7 @@ div[class^="premiumFeatureBorder"] { display: none; }
   }
 
   /* [Settings][Profiles]: Hide profile customization ad in banner preview */
-  foreignObject div[role="button"]:has(path[d^="M15 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"]) { display: none;}
+  foreignObject div[role="button"]:has(path[d^="M16.23 12c0 1.29-.95 2.25-2.22"]) { display: none;}
 
   /* [Settings][Profiles]: Hide the 'Level up your look, only with Nitro' upsell banner */
   div[class^="upsellContainer"] { display: none; }
@@ -116,7 +130,7 @@ div[class^="premiumFeatureBorder"] { display: none; }
 /* [Settings][Voice & Video] Soundboard entrance sounds */
 div[id="voice-&-video-tab"] div[class*="callSoundsDivider_"] ~ * { display: none; }
 
-#appearance-tab {
+div[class^="panel__"] {
   /* [Settings][Appearance] App icon and Theme upsell */
   section[class*="basicThemeSelectors"] {
     &+ div, &+div + div { display: none; }
@@ -464,7 +478,7 @@ div[class^="members_"] div:not([class]):has(div[class*="openOnHover__"]) { displ
 /* Disblock Origin branding */
 /* ------------------------ */
 
-div[class^="socialLinks"]::before {
+div[class^="links"]::before {
     content: "";
     display: inline-block;
     width: 16px;
