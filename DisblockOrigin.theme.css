@@ -199,7 +199,10 @@ div[class*="profileButtons"] > span:has(path[d*="M2.63 4.19A3 3 0 0 1 5.53 2H7a1
 
 /* Hide upsells in soundboard picker */
 div[data-popout-animating] div[class*=picker] {
-  [class*=sectionContainerNitroLocked], [class*=soundRowNitroLocked] { background-color: inherit; }
+  [class*=sectionContainerNitroLocked], [class*=soundRowNitroLocked] {
+    background: unset !important;
+    background-color: unset;
+  }
   div[class*=upsellContainer] { display: none; } /* NOTE: this leaves an ugly space at the bottom, could fix but meh */
 }
 
