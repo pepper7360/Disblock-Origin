@@ -398,8 +398,7 @@ section[class*="panels"] > [class*="mask"]:has([class*="questRewardTile"]) { dis
 li[role="listitem"] ~ div[class*="container"]:has(div[class*="iconContainer"]) { display: none; }
 
 /* Hide clan tags next to the usernames */
-span[class*="chipletContainerInner"]:has(img[class*="badge"]),
-span[class*="guildTagContainer"]:has(img[class*="badge"]) {
+span[class*="clanTag"], span[class*=guildTagContainer] {
   display: var(--display-clan-tags, inline-flex);
 }
 
