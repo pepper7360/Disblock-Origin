@@ -51,7 +51,7 @@ li[role="listitem"] {
   &:has(a[href="/store"], a[href="/shop"], a[href="/quest-home"]) { display: none; }
 
   /* Align the gap on the top and bottom of the remaining friends button */
-  ~ div[class*="sectionDivider"] {
+  ~ div[class^="sectionDivider"] {
       margin-top: var(--space-8);
   }
 }
@@ -62,7 +62,7 @@ div[role="list"] nav {
     ul[class*="section"]:has(div[data-settings-sidebar-item="nitro_panel"]) { display: none; }
   }
   @container style(--bool-settings-payment-section: true) {
-    div[class*="sectionLabel"]:has(+ div[data-settings-sidebar-item="nitro_panel"]) { display: var(--display-settings-billing-header); }  /* Billing Settings header */
+    div[class^="sectionLabel__"]:has(+ div[data-settings-sidebar-item="nitro_panel"]) { display: var(--display-settings-billing-header); }  /* Billing Settings header */
     div[data-settings-sidebar-item="nitro_panel"] { display: var(--display-settings-nitro-tab); } /* Nitro */
     div[data-settings-sidebar-item="premium_guild_subscriptions_panel"] { display: var(--display-settings-server-boost-tab); } /* Server Boost */
     div[data-settings-sidebar-item="subscriptions_panel"] { display: var(--display-settings-subscriptions-tab); } /* Subscriptions */
@@ -110,16 +110,16 @@ div[class*="settingsPage"] {
   }
 
   /* [Settings][Profiles]: Hide profile customization ad in banner preview */
-  foreignObject div[role="button"]:has(path[d*="M16.23 12c0 1.29-.95 2.25-2.22"]) { display: none;}
+  foreignObject div[role="button"]:has(path[d^="M16.23 12c0 1.29-.95 2.25-2.22"]) { display: none;}
 
   /* [Settings][Profiles]: Hide the 'Level up your look, only with Nitro' upsell banner */
   div[class*="upsellContainer"] { display: none; }
 }
 
 /* [Settings][Voice & Video] Soundboard entrance sounds */
-div[id="voice-&-video-tab"] div[class*="callSoundsDivider"] ~ * { display: none; }
+div[id="voice-&-video-tab"] div[class*="callSoundsDivider_"] ~ * { display: none; }
 
-div[class*="panel"] {
+div[class^="panel__"] {
   /* [Settings][Appearance] App icon and Theme upsell */
   section[class*="basicThemeSelectors"] {
     &+ div, &+div + div { display: none; }
@@ -129,38 +129,38 @@ div[class*="panel"] {
 }
 
 /* Hide message size upsells */
-div[class*="characterCount"] > div[class*=" upsell"] { display: none; }
+div[class^="characterCount"] > div[class*=" upsell_"] { display: none; }
 
 
 /* [Voice Chat][Screen Share] Hide Screen Share quality upsells */
-div[class*="qualitySettingsContainer"] {
+div[class*="qualitySettingsContainer_"] {
   button[class*="premiumUpsell"] { display: none; }
-  div[class*="upsellBanner"] { display: none; }
+  div[class*="upsellBanner_"] { display: none; }
 }
 
 /* Hide ad in profile banners */
-div[class*="premiumIconWrapper"] { display: none; }
+div[class^="premiumIconWrapper"] { display: none; }
 
 /* Hide "Level up your look" ad in account profile popout */
-div[class*="hasCollectiblesUpsell"] > div[class *="userPopoutInner"] > div[class*="animation"] { display: none; }
+div[class*="hasCollectiblesUpsell"] > div[class ^="userPopoutInner"] > div[class*="animation_"] { display: none; }
 
 /* Hide "Gift Nitro" button in DM User Profile sidebar */
 button[class*=" giftButton"] { display: none; }
 
 /* Emoji popout: "Get nitro" button */
-button[class*=shinyButton]:has(div[class*=premiumSubscribeButton]) { display: none; }
+button[class^=shinyButton]:has(div[class*=premiumSubscribeButton]) { display: none; }
 
 /* Emoji popout: "Powered by nitro" text */
-div[class*=nitroTextAndBadge] { display: none; }
+div[class^=nitroTextAndBadge] { display: none; }
 
 /* Hide "Custom emojis" Nitro text from hover tooltip */
-div[class*=tooltipPremiumContent] { display: none; }
+div[class^=tooltipPremiumContent] { display: none; }
 
 /* Emoji autocomplete upsell (wowww this stoops low, even for them) */
-div[class*="nitroTopDividerContainer"], div[class*="nitroTopDividerContainer"] ~ div { display: none; }
+div[class^="nitroTopDividerContainer"], div[class^="nitroTopDividerContainer"] ~ div { display: none; }
 
 /* Hide the 'Unlock every emoji with Nitro' in emoji picker */
-div[class*=emojiPickerListWrapper] div[class*=upsellContainer] { display: none; }
+div[class^=emojiPickerListWrapper] div[class^=upsellContainer] { display: none; }
 
 /* Remove the purple background in the emoji picker and autocomplete */
 div[class*=categorySectionNitroLocked] {
@@ -169,22 +169,22 @@ div[class*=categorySectionNitroLocked] {
 }
 
 /* Remove the purple divider at the bottom of the emoji picker*/
-div[class*=nitroBottomDivider] { display: none; }
+div[class^=nitroBottomDivider] { display: none; }
 
 /* Hide the lock icon on servers icon in the emoji picker */
-div[class*=categoryItemLockIconContainer] { display: none; }
+div[class^=categoryItemLockIconContainer] { display: none; }
 
 /* Hide the lock icon on emoji in the emoji picker */
-div[class*=emojiLockIconContainer] { display: none; }
+div[class^=emojiLockIconContainer] { display: none; }
 
 /* Restore old grayscale filter on Nitro emojis so you don't accidentally click them and get an ad */
-div[class*=categorySectionNitroLocked] > ul > li > button > img[class*="lockedEmoji"] { filter: grayscale(1); }
+div[class*=categorySectionNitroLocked] > ul > li > button > img[class^="lockedEmoji"] { filter: grayscale(1); }
 
 /* Grayscale for emoji that are simply locked and not in the Nitro section */
-button[data-type="emoji"]:has(div[class*=emojiLockIconContainer]) { filter: grayscale(1); }
+button[data-type="emoji"]:has(div[class^=emojiLockIconContainer]) { filter: grayscale(1); }
 
 /* Friend panel nitro upsell */
-div[class*="overlayBackground"]:has(div[class*="contentText"] > a[role="button"])  { display: none; }
+div[class*="overlayBackground_"]:has(div[class*="contentText_"] > a[role="button"])  { display: none; }
 
 /* Hide "sneak peek" upsell banner */
 div[class*="notice"][class*="colorPremium"] { display: none; }
@@ -195,10 +195,10 @@ div[class*="notice"][class*="colorPremium"] { display: none; }
 }
 
 /* Hide profile shop button */
-div[class*="profileButtons"] > span:has(path[d*="M2.63 4.19A3 3 0 0 1 5.53 2H7a1 1 0"]) { display: none; }
+div[class*="profileButtons"] > span:has(path[d^="M2.63 4.19A3 3 0 0 1 5.53 2H7a1 1 0"]) { display: none; }
 
 /* Hide upsells in soundboard picker */
-div[data-popout-animating] div[class*=picker] {
+div[data-popout-animating] div[class^=picker] {
   [class*=sectionContainerNitroLocked], [class*=soundRowNitroLocked] {
     background: unset !important;
     background-color: unset;
@@ -211,7 +211,7 @@ div[data-popout-animating] div[class*=picker] {
 /* ------------- */
 
 /* Boost progress bar */
-#channels > ul > div[class*="container"]:has([class*="boostCountText"]) { display: none; }
+#channels > ul > div[class*="container__"]:has([class*="boostCountText__"]) { display: none; }
 
 /* Server Boost button in top left dropdown */
 div[id="guild-header-popout-premium-subscribe"] { display: none; }
@@ -219,41 +219,41 @@ div[role="group"]:has(div[id="guild-header-popout-premium-subscribe"]) + div[rol
 
 div[role="tablist"] {
   /* [Server settings][Sidebar]: Boost tab */
-  div[class*="serverBoostTabItem"] {
+  div[class^="serverBoostTabItem"] {
     display: var(--display-server-settings-boost-tab);
 
     /* Disable SVG icon */
     svg { display: none; }
 
     /* Separator after tab */
-    + div[class*="separator"] { display: none; }
+    + div[class^="separator"] { display: none; }
   }
 }
 
 /* [Server settings][Overview]: Server Banner & Invite Background */
-#overview-tab div[class*="divider"]:has( > div > div > div[class*="upsell"]) { display: none; }
+#overview-tab div[class^="divider"]:has( > div > div > div[class^="upsell"]) { display: none; }
 
 /* [Server settings][Roles]: Hide role icon*/
-#roles-tab div[class*="container"]:has(div[class*="availabilityIndicator"]) { display: none; }
+#roles-tab div[class^="container"]:has(div[class^="availabilityIndicator"]) { display: none; }
 
 /* [Server settings][Stickers]: Hide locked tier content */
 #stickers-tab {
-  div[class*="upsellContainer"] { display: none; }
+  div[class^="upsellContainer"] { display: none; }
 
-  div[class*="tierHeaderLocked"] + div > div[class*="emptyTierWrapper"] { display: none; }
+  div[class*="tierHeaderLocked"] + div > div[class^="emptyTierWrapper"] { display: none; }
 }
 
 /* [Server settings][Boost]: Server boost ad at the bottom */
-#guild_premium-tab > div[class*="divider"] {
+#guild_premium-tab > div[class^="divider"] {
   display: none;
 
-  ~ div[class*="wrapper"] { display: none; }
-  ~ div[class*="tier0Container"] { display: none; }
+  ~ div[class^="wrapper"] { display: none; }
+  ~ div[class^="tier0Container"] { display: none; }
 }
 
 /* TODO: would be nice to hide disabled soundboard sounds & emojis
  * However, looks like it needs to be done on the JS level. This is too buggy
-div[class*="premiumDisabled"] {display:none;}*/
+div[class*="premiumDisabled_"] {display:none;}*/
 
 /* --------------- */
 /* Super reactions */
@@ -265,7 +265,7 @@ button[id="super-reaction-picker-tab"] { display: none; }
 /* Super reaction animation */
 @container style(--bool-super-reaction-hide-anim: true) or style(--bool-super-reaction-hide-anim: 1) {
   div[class*="shakeReaction"] { animation: none !important; }
-  div[class*="reactionInner"] div[class*="effectsWrapper"] { display: none; }
+  div[class^="reactionInner"] div[class^="effectsWrapper"] { display: none; }
   img[class*="hideEmoji"] { animation: blink-emoji 1s linear infinite; opacity: 1; }
   @keyframes blink-emoji {
     50% { opacity: 0; }
@@ -273,32 +273,32 @@ button[id="super-reaction-picker-tab"] { display: none; }
 }
 
 /* Upsell when hovering a Super Reaction */
-div[class*="burstReactionTooltipPrompt"] { display: none; }
+div[class^="burstReactionTooltipPrompt"] { display: none; }
 
 /* --------------------------------- */
 /* Quests (straight up paid ads lol) */
 /* --------------------------------- */
 
 /* Hide quests from the gift inventory */
-div[class*="container"][style*="discovery/quest-mountain"] { display: none; }
+div[class^="container_"][style*="discovery/quest-mountain"] { display: none; }
 
 /* Hide quests tab from Discover */
-div[class*="categoryItem"]:nth-last-of-type(2) { display: none; }
+div[class^="categoryItem_"]:nth-last-of-type(2) { display: none; }
 
 /* Completed quest profile badge (doesn't provide any use so...) */
-div[class*=tags] div[role="group"] > a[href="https://discord.com/discovery/quests"] { display: none; }
+div[class^=tags] div[role="group"] > a[href="https://discord.com/discovery/quests"] { display: none; }
 
 /* Promoted quest inside "Active Now" friends' profiles */
-div[class*=wrapper]:has(div[class*=instructions]) { display: none; }
+div[class^=wrapper]:has(div[class^=instructions]) { display: none; }
 
 /* Hide members list quest icon */
-div[class*="member"] svg[class*="questsIcon"] { display: none; }
+div[class*="member__"] svg[class*="questsIcon_"] { display: none; }
 
 /* Hide members list quest */
-div[class*="member"][class*="selected"] div[class*="childContainer_"] { background-color: unset !important; }
+div[class*="member__"][class*="selected__"] div[class*="childContainer__"] { background-color: unset !important; }
 
 /* Hide members list quest popout */
-div[id*="popout"]:has(div[class*="imgWrapper"] img[src*="https://cdn.discordapp.com/quests"]) {
+div[id*="popout_"]:has(div[class*="imgWrapper__"] img[src^="https://cdn.discordapp.com/quests"]) {
   display: none;
 }
 
@@ -311,7 +311,7 @@ form div[class*=channelBottomBarArea] div[class*=buttons] {
   /* Send gift button (both versions) */
   &> div:not(.expression-picker-chat-input-button):not(.app-launcher-entrypoint) {
     /* Web client */
-    &:has(div[class*="lottieIcon"]) { display: none; }
+    &:has(div[class*="lottieIcon__"]) { display: none; }
 
     /* Desktop client */
     &:has(>span) { display: none; }
@@ -319,7 +319,7 @@ form div[class*=channelBottomBarArea] div[class*=buttons] {
 
   div.expression-picker-chat-input-button {
     /* GIF picker button */
-    &:has( + span[class*="hiddenVisually"] + div.expression-picker-chat-input-button div[class*="stickerButton"]) { display: var(--display-gif-button, flex); }
+    &:has( + span[class^="hiddenVisually_"] + div.expression-picker-chat-input-button div[class*="stickerButton_"]) { display: var(--display-gif-button, flex); }
 
     /* Sticker picker button */
     &:has(div[class*="stickerButton"]) { display: var(--display-sticker-button, flex); }
@@ -338,43 +338,43 @@ div[class*="popover"] {
   div[role="button"]:has(div[data-type="emoji"]) { display: var(--display-hover-reaction-emoji, flex); }
 
   /* Separator */
-  &> div[class*="separator"] { display: var(--display-hover-reaction-emoji); }
+  &> div[class^="separator"] { display: var(--display-hover-reaction-emoji); }
 }
 
 /* Edit image with Apps on image hover */
-div[class*="imageContainer"] div[class*="hoverButton"]:not([class*="removeMosaicItemHoverButton"]) { display: none; }
+div[class^="imageContainer_"] div[class^="hoverButton_"]:not([class*="removeMosaicItemHoverButton"]) { display: none; }
 
 /* Avatar decorations */
-svg[class*="avatarDecoration"], img[class*="avatarDecoration"] { display: var(--display-profile-effects); }
+svg[class*="avatarDecoration_"], img[class^="avatarDecoration_"] { display: var(--display-profile-effects); }
 
 /* Profile effects */
-div[class*="profileEffects"] { display: var(--display-profile-effects); }
+div[class^="profileEffects"] { display: var(--display-profile-effects); }
 
 /* Nameplates */
-div[class*="member"] > div[class*="nameplated"] > div[class*="container"] { display: var(--display-nameplates); }
-li[role="listitem"] > div[class*="interactive"] > div[class*="container"] { display: var(--display-nameplates); }
+div[class*="member_"] > div[class*="nameplated_"] > div[class^="container_"] { display: var(--display-nameplates); }
+li[role="listitem"] > div[class*="interactive_"] > div[class^="container_"] { display: var(--display-nameplates); }
 
 /* Animated "Activities" hover effect in calls */
 /* NOTE: would be nice to disable the white hover effect,
  * but that'd break when you're actually in an activity */
-div[aria-labelledby*="vc-activities"] { display: none; }
+div[aria-labelledby^="vc-activities"] { display: none; }
 
 /* Hide Help button */
-div[class*="bar"] > div[class*="trailing"] > a[href*="support.discord.com"] { display: none; }
+div[class*="bar_"] > div[class*="trailing_"] > a[href*="support.discord.com"] { display: none; }
 
 /* Hide explore servers button */
-div[class*="listItem"]:has([data-list-item-id="guildsnav___guild-discover-button"]) { display: none; }
+div[class^="listItem_"]:has([data-list-item-id="guildsnav___guild-discover-button"]) { display: none; }
 div[class*="unreadMentionsFixedFooter"] { bottom: 0; } /* Removed unread mentions indicator footer offset */
 
 /* Hide download button in web version */
-div[class*="listItem"]:has(div[class*="guildSeparator"]):has( + div[class*="listItem"] [data-list-item-id=guildsnav___app-download-button]) { display: none; } /* separator */
-div[class*="listItem"]:has([data-list-item-id=guildsnav___app-download-button]) { display: none; } /* button & click target */
+div[class^="listItem_"]:has(div[class^="guildSeparator_"]):has( + div[class^="listItem_"] [data-list-item-id=guildsnav___app-download-button]) { display: none; } /* separator */
+div[class^="listItem_"]:has([data-list-item-id=guildsnav___app-download-button]) { display: none; } /* button & click target */
 
 /* Hide Library button in Home */
 a[data-list-item-id*="___library"] { display: none; }
 
 /* Profile badges */
-div[class*=tags] div[role="group"] {
+div[class^=tags] div[role="group"] {
   /* Nitro and Server Boosting */
   a[href*="/settings/premium"] { display: var(--display-badges); }
 
@@ -383,19 +383,19 @@ div[class*=tags] div[role="group"] {
 }
 
 /* Server booster member list badge */
-div[class*="nameAndDecorators"] div:has(svg[class*="premiumIcon"]) { display: var(--display-badges); }
+div[class^="nameAndDecorators_"] div:has(svg[class^="premiumIcon_"]) { display: var(--display-badges); }
 
 /* Hide all super reactions entirely */
-div[id*="message-reactions"] div:has( > div[class*="reaction"] > div[class*="reactionInner"] > div:first-child:not([class=""])) { display: var(--display-super-reactions); }
+div[id*="message-reactions"] div:has( > div[class^="reaction_"] > div[class^="reactionInner_"] > div:first-child:not([class=""])) { display: var(--display-super-reactions); }
 
 /* Hide "Active Now" sidebar in friends list */
-div[class*="nowPlayingColumn"] { display: var(--display-active-now); }
+div[class^="nowPlayingColumn"] { display: var(--display-active-now); }
 
 /* Hide "Quest Reward" Panel above user info */
-section[class*="panels"] > [class*="mask"]:has([class*="questRewardTile"]) { display: none; }
+section[class^="panels"] > [class*="mask"]:has([class*="questRewardTile"]) { display: none; }
 
 /* Hide "Play Again" activities heading in DMs list */
-li[role="listitem"] ~ div[class*="container"]:has(div[class*="iconContainer"]) { display: none; }
+li[role="listitem"] ~ div[class^="container"]:has(div[class^="iconContainer"]) { display: none; }
 
 /* Hide clan tags next to the usernames */
 span[class*="clanTag"], span[class*=guildTagContainer] {
@@ -404,22 +404,22 @@ span[class*="clanTag"], span[class*=guildTagContainer] {
 
 /* Only for some servers, roles get animated gradients + glow */
 @container style(--bool-show-name-gradients: false) or style(--bool-show-name-gradients: 0) {
-    span[class*="usernameGradient"] {
+    span[class*="usernameGradient_"] {
       color: var(--custom-gradient-color-1);
       background: none;
       -webkit-text-fill-color: initial;
 
-      ~ [class*="nameGlow"] {
+      ~ [class*="nameGlow__"] {
         display: none;
       }
     }
 }
 
 /* Hide server members activity title */
-h3[class*="membersGroup"]:has(span[class*="headerContainer"]) { display: var(--display-server-members-activity, block); }
+h3[class^="membersGroup_"]:has(span[class^="headerContainer__"]) { display: var(--display-server-members-activity, block); }
 
 /* Hide server members activity cards */
-div[class*="members"] div:not([class]):has(div[class*="openOnHover"]) { display: var(--display-server-members-activity); }
+div[class^="members_"] div:not([class]):has(div[class*="openOnHover__"]) { display: var(--display-server-members-activity); }
 
 /* Hide server banners in the channel list */
 @container style(--bool-show-server-banners: false) or style(--bool-show-server-banners: 0) {
@@ -434,36 +434,36 @@ div[class*="members"] div:not([class]):has(div[class*="openOnHover"]) { display:
         }
     }
     /* Always use the dropdown button color which would get overridden when a banner is visible */
-    svg[class*="dropdownButtonBannerVisible"] { color: var(--icon-secondary); }
+    svg[class*="dropdownButtonBannerVisible_"] { color: var(--icon-secondary); }
 
-    div[class*="bannerVisible"] {
+    div[class*="bannerVisible_"] {
         /* Always use the header content color which would get overridden when a banner is visible */
-        div[class*="headerContent"] { color: var(--header-primary); }
+        div[class*="headerContent_"] { color: var(--header-primary); }
 
         /* Always use the server name color which would get overridden when a banner is visible */
-        h2[class*="name"] { color: var(--text-default); }
+        h2[class*="name_"] { color: var(--text-default); }
     }
 
     /* Always use the default border which would get hidden when a banner is visible */
-    div[class*="sidebarList"]:has([data-has-banner=true][data-banner-visible=true]) { border-top: 1px solid var(--app-border-frame); }
+    div[class*="sidebarList_"]:has([data-has-banner=true][data-banner-visible=true]) { border-top: 1px solid var(--app-border-frame); }
 
     /* Hide the extra space left by the banner */
-    div[class*="sidebarList"]:has(div[class*="animatedContainer"]) div[class*="scroller"] > ul { margin-top: -84px; }
+    div[class*="sidebarList_"]:has(div[class*="animatedContainer_"]) div[class*="scroller_"] > ul { margin-top: -84px; }
 }
 
 @container style(--bool-show-profile-banner: false) or style(--bool-show-profile-banner: 0) {
     /* Hide profile banner in popout and modal */
-    div[class*="user-profile-popout"] div[class*="banner"], div[class*="user-profile-modal"] div[class*="banner"] {
+    div[class*="user-profile-popout"] div[class^="banner_"], div[class*="user-profile-modal"] div[class^="banner_"] {
         background-image: unset !important;
 
         /* Hide the GIF tag for when "Automatically play GIFs when Discord is focused." is disabled */
-        & > div[class*="gifTag"]{ display: none; }
+        & > div[class^="gifTag_"]{ display: none; }
     }
 }
 
 @container style(--bool-show-profile-modal-background-banner: false) or style(--bool-show-profile-modal-background-banner: 0) {
     /* Hide profile modal background banner */
-    div[class*="user-profile-modal"] div[class*="backgroundImage"] {
+    div[class*="user-profile-modal"] div[class^="backgroundImage_"] {
         background-image: unset !important;
     }
 }
