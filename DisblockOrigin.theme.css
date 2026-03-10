@@ -398,9 +398,9 @@ section[class^="panels"] > [class*="mask"]:has([class*="questRewardTile"]) { dis
 li[role="listitem"] ~ div[class^="container"]:has(div[class^="iconContainer"]) { display: none; }
 
 /* Hide clan tags next to the usernames */
-span[class*="clanTag"], span[class*=guildTagContainer] {
-  display: var(--display-clan-tags, inline-flex);
-}
+span[class*="clanTag__"] { display: var(--display-clan-tags, inline-flex); } /* member list */
+span[class*="clanTagChiplet_"] { display: var(--display-clan-tags, inline); } /* chat messages */
+span[class*="guildTagContainer__"] { display: var(--display-clan-tags, block); } /* profile */
 
 /* Only for some servers, roles get animated gradients + glow */
 @container style(--bool-show-name-gradients: false) or style(--bool-show-name-gradients: 0) {
