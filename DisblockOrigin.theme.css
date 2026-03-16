@@ -33,6 +33,7 @@
   --bool-show-server-banners: true;                  /* Show server banners in the channel list */
   --bool-show-profile-banner: true;                  /* Show profile banner */
   --bool-show-profile-modal-background-banner: true; /* Show profile modal background banner */
+  --display-voice-status: unset;                     /* Prevent popups related to voice room status */
 
   --bool-settings-payment-section: true;             /* Settings menu toggle ENTIRE PAYMENT SECTION */
   --display-settings-nitro-tab: none;                /* Settings menu Nitro tab */
@@ -467,6 +468,10 @@ div[class^="members_"] div:not([class]):has(div[class*="openOnHover__"]) { displ
         background-image: unset !important;
     }
 }
+
+/* Hide the voice status popups */
+div[data-popout-animating][class^=animatorRight]:has(div[class^=hangStatusContent]) { display: var(--display-voice-status); }
+#hang-status-picker { display: var(--display-voice-status); }
 
 /* ------------------------ */
 /* Disblock Origin branding */
