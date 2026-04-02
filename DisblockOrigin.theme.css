@@ -473,6 +473,9 @@ div[class^="members_"] div:not([class]):has(div[class*="openOnHover__"]) { displ
 div[data-popout-animating][class^=animatorRight]:has(div[class^=hangStatusContent]) { display: var(--display-voice-status); }
 #hang-status-picker { display: var(--display-voice-status); }
 
+/* Temporary ad for april fools' */
+#popover-portal + div[class^=layerContainer] > div[class^=container]:has(div[class^=trailer]) { display: none; }
+
 /* ------------------------ */
 /* Disblock Origin branding */
 /* ------------------------ */
