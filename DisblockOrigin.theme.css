@@ -349,8 +349,16 @@ svg[class*="avatarDecoration_"], img[class^="avatarDecoration_"] { display: var(
 div[class^="profileEffects"] { display: var(--display-profile-effects); }
 
 /* Nameplates */
-div[class*="member_"] > div[class*="nameplated_"] > div[class^="container_"] { display: var(--display-nameplates); }
-li[role="listitem"] > div[class*="interactive_"] > div[class^="container_"] { display: var(--display-nameplates); }
+div[class*="member_"] > div[class*="nameplated_"] > div[class^="container_"] { display: var(--display-nameplates); } /* server member list */
+li[role="listitem"] > div[class*="interactive_"] > div[class^="container_"] { display: var(--display-nameplates); } /* DMs list */
+/* own user status and settings */
+section[class^="panels__"] > div[class^="container__"] > div[class^="container_"] { display: var(--display-nameplates); }
+div[class*=" plated__"]:hover { background-color: var(--control-secondary-background-hover) !important; }
+button[class*=" plated__"]:hover { background-color: var(--background-mod-normal) !important; }
+button[class*=" plateMuted__"] {
+  background-color: var(--opacity-red-12) !important;
+  &:hover { background-color: var(--opacity-red-24) !important; }
+}
 
 /* Animated "Activities" hover effect in calls */
 /* NOTE: would be nice to disable the white hover effect,
