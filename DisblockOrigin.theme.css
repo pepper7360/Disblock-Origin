@@ -87,8 +87,8 @@ div[role="list"] nav {
     div[class*=premiumUpsell] { display: none; }
   }
 
-  /* Add Super Reaction menu item */
-  div:has(>#burst-reaction-toggle-button) { display: none; }
+    /* Toggle super reactions button */
+    #emoji-picker-tab-panel > div[class^=header] > div:has(+#«rs9i»):has(>svg) { display: none; }
 }
 
 /* Profiles: Change decorations exclusive to Nitro */
@@ -259,9 +259,6 @@ div[class*="premiumDisabled_"] {display:none;}*/
 /* --------------- */
 /* Super reactions */
 /* --------------- */
-
-/* Super reactions button */
-button[id="super-reaction-picker-tab"] { display: none; }
 
 /* Super reaction animation */
 @container style(--bool-super-reaction-hide-anim: true) or style(--bool-super-reaction-hide-anim: 1) {
