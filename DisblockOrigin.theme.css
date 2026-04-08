@@ -377,7 +377,7 @@ div[class^=tags] div[role="group"] {
   a[href*="/settings/premium"] { display: var(--display-badges); }
 
   /* Orbs Apprentice */
-  > a:has(img[class*="badge"][src*="83d8a1eb09a8d64e59233eec5d4d5c2d"]) { display: none; }
+  a:has(img[class*="badge"][src*="83d8a1eb09a8d64e59233eec5d4d5c2d"]) { display: none; }
 }
 
 /* Server booster member list badge */
