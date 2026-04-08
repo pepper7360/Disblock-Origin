@@ -472,6 +472,7 @@ div[data-popout-animating][class^=animatorRight]:has(div[class^=hangStatusConten
 
 /* Temporary ad for april fools' */
 #popover-portal + div[class^=layerContainer] > div[class^=container]:has(div[class^=trailer]) { display: none; }
+div[class^=tags] div[role="group"] > a:has(img[class*="badge"][src*="ca105ad9cfc8580c765101d17bbb2323"]) { display: none; }
 
 /* ------------------------ */
 /* Disblock Origin branding */
