@@ -148,6 +148,14 @@ div[class*="hasCollectiblesUpsell"] > div[class ^="userPopoutInner"] > div[class
 /* Hide "Gift Nitro" button in DM User Profile sidebar */
 button[class*=" giftButton"] { display: none; }
 
+/* Hide "Gift Nitro" button in user header & DM User Profile sidebar (experiment 2026-03-new-gifting-entrypoints) */
+div[class^=profileButtons], .user-profile-sidebar > div > div > div[class^=wrapper] {
+  span:has(svg > path[d^="M4 6a4 4 0 0 1 4-4h.09c1.8 0 3.39 1.18 3.91 2.9A4.09"]) { display: none; }
+}
+
+/* Hide "Gift Nitro" button in the message box of user popout (experiment 2026-03-new-gifting-entrypoints) */
+.user-profile-popout div[class*=channelTextArea] div[class^=buttons] > div:has(svg > path[d^="M4 6a4 4 0 0 1 4-4h.09c1.8 0 3.39 1.18 3.91 2.9A4.09 4.09"]) { display: none; }
+
 /* Emoji popout: "Get nitro" button */
 button[class^=shinyButton]:has(div[class*=premiumSubscribeButton]) { display: none; }
 
