@@ -44,7 +44,12 @@
     "Hide": "none"
 }
 
-@var select     display-profile-effects "Display Avatar decorations & profile effects" {
+@var select     display-profile-effects "Display effects on profile cards" {
+    "Show": "unset",
+    "Hide*": "none"
+}
+
+@var select     display-avatar-decorations "Display decorations on top of avatars" {
     "Show": "unset",
     "Hide*": "none"
 }

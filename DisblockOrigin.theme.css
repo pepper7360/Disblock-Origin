@@ -23,7 +23,8 @@
   --display-app-launcher: none;                      /* App launcher right of chat bar */
   --bool-super-reaction-hide-anim: true;             /* Replace Super Reactions with a blink animation */
   --display-super-reactions: unset;                  /* Hide super reactions entirely */
-  --display-profile-effects: none;                   /* Avatar decorations & profile effects */
+  --display-profile-effects: none;                   /* Effects on profile cards */
+  --display-avatar-decorations: none;                /* Decorations on top of avatars */
   --display-nameplates: none;                        /* Hide nameplates in the members list */
   --display-active-now: unset;                       /* Active Now column in friends list */
   --display-clan-tags: unset;                        /* Clan tags next to the usernames */
@@ -351,7 +352,7 @@ div[class*="popover"] {
 div[class^="imageContainer_"] div[class^="hoverButton_"]:not([class*="removeMosaicItemHoverButton"]) { display: none; }
 
 /* Avatar decorations */
-svg[class*="avatarDecoration_"], img[class^="avatarDecoration_"] { display: var(--display-profile-effects); }
+svg[class*="avatarDecoration_"], img[class^="avatarDecoration_"] { display: var(--display-avatar-decorations); }
 
 /* Profile effects */
 div[class^="profileEffects"] { display: var(--display-profile-effects); }
