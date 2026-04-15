@@ -309,6 +309,9 @@ div[id*="popout_"]:has(div[class*="imgWrapper__"] img[src^="https://cdn.discorda
   display: none;
 }
 
+/* Hide friends list 'Active now' quests */
+div[class^="itemCard_"] > div div:has(div[class^="questRewardTile_"]) { display: none; }
+
 /* ------------------ */
 /* General annoyances */
 /* ------------------ */
