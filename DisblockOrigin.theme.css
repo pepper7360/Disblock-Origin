@@ -48,6 +48,19 @@
 /* Hide Nitro upsells */
 /* ------------------ */
 
+/* Hide the Nitro upsell container shown at the bottom of the profile modal editor */
+#profile-modal-editing-panel div[class^="floatingUpsellContainer_"],
+
+/* Hide the server-specific profile modal editor upsell section */
+#profile-modal-editing-panel div[class^="guildProfileUpsell_"] {
+  display: none;
+}
+
+/* Remove the background artwork that remains when the guild profile upsell is hidden */
+#profile-modal-editing-panel:has(div[class^="guildProfileUpsell_"]) {
+  background-image: none;
+}
+
 /* Hide custom camera background upsell */
 div[class^="newBackgroundTooltipContainer_"]:has(div[class^="backgroundCustomInlineUpsellBackground_"])  { display: var(--display-nitro-features); }
 
