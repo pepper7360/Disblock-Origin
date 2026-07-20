@@ -16,7 +16,7 @@ Use your favorite client mod (such as Vencord) to add the theme. You can use
 this URL, which mirrors the files on the repo:
 
 ```
-https://raw.codeberg.page/AllPurposeMat/Disblock-Origin/DisblockOrigin.theme.css
+https://allpurposemat.codeberg.page/Disblock-Origin/DisblockOrigin.theme.css
 ```
 
 ### With Stylus
@@ -25,7 +25,7 @@ If using Discord from the browser, you can use the
 [Stylus](https://add0n.com/stylus.html) to load and configure Disblock Origin.
 First, click the button below with the extension installed:
 
-[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://codeberg.org/AllPurposeMat/Disblock-Origin/raw/branch/master/DisblockOrigin.user.css)
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://allpurposemat.codeberg.page/Disblock-Origin/DisblockOrigin.user.css)
 
 If on Firefox, you must enable `Patch CSP to allow style assets` or the style
 won't work. If you are having problems, make sure
