@@ -50,26 +50,32 @@
 
 #user-profile-editing-panel {
   /* Hide the Nitro upsell container shown at the bottom of the profile modal editor */
-	div[class^="floatingUpsellContainer_"],
+  div[class^="floatingFooter"] {
+    display: none;
+  }
 
-	/* Hide the server-specific profile modal editor upsell section */
-	div[class^="guildProfileUpsell_"] {
-	  display: none;
-	}
+  /* Hide the server-specific profile modal editor upsell section */
+  div[class^="guildProfileUpsell_"] {
+    /* Hide all upsell elements */
+    > * {
+      display: none;
+    }
 
-	/* Remove the background artwork that remains when the guild profile upsell is hidden */
-	&:has(div[class^="guildProfileUpsell_"]) {
-	  background-image: none;
-	}
+    /* Add disclaimer, since it looks very weird as an empty sidebar */
+    &:after {
+      content: "(upsells hidden by Disblock Origin; this might be empty)";
+      color: var(--text-default);
+    }
+  }
+
+  /* Remove the gradient that remains when the guild profile upsell is hidden */
+  > div > div[class*="premiumGradientBackground"] {
+    background-image: none;
+  }
 
   /* Hide groups of customization that are not accessible (Nitro upsell) */
   div[class^=group]:has(>div[class*=disabled]) {
     display: none;
-  }
-
-  div[class^=content]:after {
-    content: "(upsells hidden by Disblock Origin; this might be empty)";
-    color: var(--text-default);
   }
 }
 
