@@ -282,6 +282,25 @@ div[data-popout-animating] div[class^=picker] {
   div[class*=upsellContainer] { display: none; } /* NOTE: this leaves an ugly space at the bottom, could fix but meh */
 }
 
+/* Modal for "Your message is too long" */
+div[data-mana-component="modal"] {
+  > div[class*=nitro-pink] {
+    /* Hide gradient */
+    &::before {
+      background-image: none;
+    }
+
+    /* Hide text that explains you need Nitro */
+    > header div[class^="headerSubtitleWrapper"] p:nth-of-type(2) {
+      display: none;
+    }
+  }
+
+  footer div[class^="expressiveWrapper"] {
+    display: none;
+  }
+}
+
 /* ------------- */
 /* Server boosts */
 /* ------------- */
