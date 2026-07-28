@@ -48,7 +48,7 @@
 /* Hide Nitro upsells */
 /* ------------------ */
 
-#profile-modal-editing-panel {
+#user-profile-editing-panel {
   /* Hide the Nitro upsell container shown at the bottom of the profile modal editor */
 	div[class^="floatingUpsellContainer_"],
 
@@ -65,6 +65,11 @@
   /* Hide groups of customization that are not accessible (Nitro upsell) */
   div[class^=group]:has(>div[class*=disabled]) {
     display: none;
+  }
+
+  div[class^=content]:after {
+    content: "(upsells hidden by Disblock Origin; this might be empty)";
+    color: var(--text-default);
   }
 }
 
@@ -114,17 +119,17 @@ li[role="listitem"] {
 }
 
 /* [Settings][Sidebar] Hide Nitro tabs */
-div[role="list"] nav {
+aside nav ul[data-list-id="settings-sidebar"] {
   @container style(--bool-settings-payment-section: false) {
-    ul[class*="section"]:has(div[data-settings-sidebar-item="nitro_panel"]) { display: none; }
+    li[class*="section"]:has(li[data-settings-sidebar-item="nitro_panel"]) { display: none; }
   }
   @container style(--bool-settings-payment-section: true) {
-    div[class^="sectionLabel__"]:has(+ div[data-settings-sidebar-item="nitro_panel"]) { display: var(--display-settings-billing-header); }  /* Billing Settings header */
-    div[data-settings-sidebar-item="nitro_panel"] { display: var(--display-settings-nitro-tab); } /* Nitro */
-    div[data-settings-sidebar-item="premium_guild_subscriptions_panel"] { display: var(--display-settings-server-boost-tab); } /* Server Boost */
-    div[data-settings-sidebar-item="subscriptions_panel"] { display: var(--display-settings-subscriptions-tab); } /* Subscriptions */
-    div[data-settings-sidebar-item="gift_panel"] { display: var(--display-settings-gift-inventory-tab); } /* Gift Inventory */
-    div[data-settings-sidebar-item="billing_panel"] { display: var(--display-nitro-features); } /* Billing */
+    div[class^="sectionLabel__"]:has(+ ul > li[data-settings-sidebar-item="nitro_panel"]) { display: var(--display-settings-billing-header); }  /* Billing Settings header */
+    li[data-settings-sidebar-item="nitro_panel"] { display: var(--display-settings-nitro-tab); } /* Nitro */
+    li[data-settings-sidebar-item="premium_guild_subscriptions_panel"] { display: var(--display-settings-server-boost-tab); } /* Server Boost */
+    li[data-settings-sidebar-item="subscriptions_panel"] { display: var(--display-settings-subscriptions-tab); } /* Subscriptions */
+    li[data-settings-sidebar-item="gift_panel"] { display: var(--display-settings-gift-inventory-tab); } /* Gift Inventory */
+    li[data-settings-sidebar-item="billing_panel"] { display: var(--display-nitro-features); } /* Billing */
   }
 }
 
