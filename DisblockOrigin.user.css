@@ -59,6 +59,11 @@
     "Hide*": "none"
 }
 
+@var select     display-frame-border "Display the frame border around a profile" {
+    "Show": "unset",
+    "Hide*": "none"
+}
+
 @var select     display-active-now "Display Active Now column in friends list" {
     "Show*": "unset",
     "Hide": "none"

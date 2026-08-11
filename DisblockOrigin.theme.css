@@ -26,6 +26,7 @@
   --display-profile-effects: none;                   /* Effects on profile cards */
   --display-avatar-decorations: none;                /* Decorations on top of avatars */
   --display-nameplates: none;                        /* Hide nameplates in the members list */
+  --display-frame-border: none;                      /* Hide the frame border around a profile */
   --display-active-now: unset;                       /* Active Now column in friends list */
   --display-clan-tags: unset;                        /* Clan tags next to the usernames */
   --display-server-settings-boost-tab: none;         /* Server settings menu Boost tab */
@@ -47,6 +48,15 @@
 /* ------------------ */
 /* Hide Nitro upsells */
 /* ------------------ */
+
+/* Voice chat custom entrance sound */
+div[data-nav-anchor-key="entrance_sounds_setting"] div[class^="customizationSection_"] { display: var(--nitro-features) }
+
+/* Shop This Look */
+div#user-profile-overflow-menu-shop-this-look { display: var(--nitro-features) }
+
+/* Profile frame */
+div[class^=profileFrameContainer_] { display: var(--display-frame-border); }
 
 #user-profile-editing-panel {
   /* Hide the Nitro upsell container shown at the bottom of the profile modal editor */
@@ -378,7 +388,7 @@ div[class^="container_"][style*="discovery/quest-mountain"] { display: none; }
 div[class^="categoryItem_"]:nth-last-of-type(2) { display: none; }
 
 /* Completed quest profile badge (doesn't provide any use so...) */
-div[class^=tags] div[role="group"] > a[href="https://discord.com/discovery/quests"] { display: none; }
+div[role="group"] a[href="https://discord.com/discovery/quests"] { display: none; }
 
 /* Promoted quest inside "Active Now" friends' profiles */
 div[class^=wrapper]:has(div[class^=instructions]) { display: none; }
@@ -482,9 +492,19 @@ div[class^="listItem_"]:has([data-list-item-id=guildsnav___app-download-button])
 a[data-list-item-id*="___library"] { display: none; }
 
 /* Profile badges */
-div[class^=tags] div[role="group"] {
+div[role="group"] {
   /* Nitro and Server Boosting */
   a[href*="/settings/premium"] { display: var(--display-badges); }
+
+  /* Server booster */
+  a[href*="/settings/guild-boosting"] {
+    display: var(--display-badges);
+  }
+
+  /* Gifter */
+  a[href*="/settings/guild-boosting"] {
+    display: var(--display-badges);
+  }
 
   /* Orbs Apprentice */
   a:has(img[class*="badge"][src*="83d8a1eb09a8d64e59233eec5d4d5c2d"]) { display: none; }
@@ -582,7 +602,7 @@ div[data-popout-animating][class^=animatorRight]:has(div[class^=hangStatusConten
 
 /* Temporary ad for april fools' */
 #popover-portal + div[class^=layerContainer] > div[class^=container]:has(div[class^=trailer]) { display: none; }
-div[class^=tags] div[role="group"] > a:has(img[class*="badge"][src*="ca105ad9cfc8580c765101d17bbb2323"]) { display: none; }
+div[role="group"] > a:has(img[class*="badge"][src*="ca105ad9cfc8580c765101d17bbb2323"]) { display: none; }
 
 /* ------------------------ */
 /* Disblock Origin branding */
