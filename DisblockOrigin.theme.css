@@ -50,7 +50,7 @@
 /* ------------------ */
 
 /* Voice chat custom entrance sound */
-div[data-nav-anchor-key="entrance_sounds_setting"] div[class^="customizationSection_"] { display: var(--nitro-features) }
+div[data-nav-anchor-key="entrance_sounds_setting"] { display: var(--nitro-features) }
 
 /* Shop This Look */
 div#user-profile-overflow-menu-shop-this-look { display: var(--nitro-features, flex) }
