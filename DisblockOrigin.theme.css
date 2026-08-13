@@ -502,7 +502,7 @@ div[role="group"] {
   }
 
   /* Gifter */
-  a[href*="/settings/guild-boosting"] {
+  a:has(img[class*="badge"][src*="/badge-icons/"]) {
     display: var(--display-badges);
   }
 
