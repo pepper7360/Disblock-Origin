@@ -405,11 +405,9 @@ div[id*="popout_"]:has(div[class*="imgWrapper__"] img[src^="https://cdn.discorda
 }
 
 /* Hide friends list 'Active now' quests */
-.refresh-active-now div[role=button] div[class^=body] {
-  /* technically there is a 1px border-bottom in the preceding section, but it's not worth the performance cost to hide that */
-  &>div[class^=wrapper]:has(div[class^=treatment]) {
-    display: none;
-  }
+#online-tab ~ div[class^=nowPlayingColumn] div[aria-haspopup="menu"] div[class^="body"] {
+  &> section:not(:last-child) { border-bottom: none; }
+  &> div:has(div[class^="ctas"]) { display: none; }
 }
 
 /* ------------------ */
