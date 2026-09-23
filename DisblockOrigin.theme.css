@@ -60,7 +60,8 @@ div[class^=profileFrameContainer_] { display: var(--display-frame-border); }
 
 #user-profile-editing-panel {
   /* Hide the Nitro upsell container shown at the bottom of the profile modal editor */
-  div[class^="floatingFooter"] {
+  div[class^="premiumTryItOutSection__"],
+  div[class^="premiumTryItOutSection__"] + div:has(button) {
     display: none;
   }
 
@@ -79,7 +80,7 @@ div[class^=profileFrameContainer_] { display: var(--display-frame-border); }
   }
 
   /* Remove the gradient that remains when the guild profile upsell is hidden */
-  > div > div[class*="premiumGradientBackground"] {
+  div[class*="premiumGradientBackground"] {
     background-image: none;
   }
 
@@ -528,7 +529,7 @@ li[role="listitem"] ~ div[class^="container"]:has(div[class^="iconContainer"]) {
 /* Hide clan tags next to the usernames */
 span[class*="clanTag__"] { display: var(--display-clan-tags, inline-flex); } /* member list */
 span[class*="clanTagChiplet_"] { display: var(--display-clan-tags, inline); } /* chat messages */
-span[class*="guildTagContainer__"] { display: var(--display-clan-tags, block); } /* profile */
+span[class*="guildTagPill__"] { display: var(--display-clan-tags, block); } /* profile */
 
 /* Only for some servers, roles get animated gradients + glow */
 @container style(--bool-show-name-gradients: false) or style(--bool-show-name-gradients: 0) {
