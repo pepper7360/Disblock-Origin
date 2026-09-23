@@ -543,7 +543,9 @@ span[class*="guildTagPill__"] { display: var(--display-clan-tags, block); } /* p
 }
 
 /* Hide server members activity title */
-h3[class^="membersGroup_"]:has(span[class^="headerContainer__"]) { display: var(--display-server-members-activity, block); }
+h3[class*="membersGroup_"]:has(div[class^="headerContainer__"]) {
+  display: var(--display-server-members-activity, block);
+}
 
 /* Hide server members activity cards */
 div[class^="members_"] div:not([class]):has(div[class*="openOnHover__"]) { display: var(--display-server-members-activity); }
