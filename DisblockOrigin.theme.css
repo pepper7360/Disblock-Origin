@@ -60,6 +60,7 @@ div[class^=profileFrameContainer_] { display: var(--display-frame-border); }
 
 #user-profile-editing-panel {
   /* Hide the Nitro upsell container shown at the bottom of the profile modal editor */
+  div[class^="floatingFooter"],
   div[class^="premiumTryItOutSection__"],
   div[class^="premiumTryItOutSection__"] + div:has(button) {
     display: none;
@@ -236,6 +237,7 @@ div[class^=profileButtons], .user-profile-sidebar > div > div > div[class^=wrapp
 
 /* Emoji popout: "Get nitro" button */
 button[class^=shinyButton]:has(div[class*=premiumSubscribeButton]) { display: none; }
+div[class^=emojiSection_] div:has(button[class*=expressive_]) { display: none; }
 
 /* Emoji popout: "Powered by nitro" text */
 div[class^=nitroTextAndBadge] { display: none; }
