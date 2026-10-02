@@ -311,6 +311,11 @@ div[data-mana-component="modal"] {
   }
 }
 
+/* Nitro-related ads announcement popups on the top-left */
+#popover-portal + div div[data-mana-component="popover"]:has(div[class^=expressiveWrapper]) {
+  display: none;
+}
+
 /* ------------- */
 /* Server boosts */
 /* ------------- */
